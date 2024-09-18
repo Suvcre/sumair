@@ -1,0 +1,89 @@
+{
+	"name": "vercel-vscode",
+	"publisher": "haydenbleasel",
+	"private": true,
+	"displayName": "Vercel for VS Code",
+	"description": "A VS Code extension for Vercel deployment status.",
+	"icon": "icon.png",
+	"version": "1.0.32",
+	"engines": {
+		"vscode": "^1.72.0"
+	},
+	"categories": [
+		"Testing",
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"license": "ISC",
+	"main": "./out/extension.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/haydenbleasel/vercel-vscode"
+	},
+	"contributes": {
+		"configuration": {
+			"title": "Vercel",
+			"properties": {
+				"vercelVSCode.accessToken": {
+					"type": "string",
+					"default": "",
+					"description": "Your Vercel Access Token"
+				},
+				"vercelVSCode.projectId": {
+					"type": "string",
+					"default": "",
+					"description": "Your Vercel Project ID"
+				},
+				"vercelVSCode.teamId": {
+					"type": "string",
+					"default": "",
+					"description": "Your Vercel Team ID"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build",
+		"build": "tsup",
+		"watch": "tsup",
+		"bump-deps": "npx npm-check-updates -u -x @types/vscode,eslint && yarn install"
+	},
+	"dependencies": {
+		"cross-fetch": "^4.0.0",
+		"date-fns": "^3.6.0",
+		"eslint-config-harmony": "^3.1.11"
+	},
+	"devDependencies": {
+		"@auto-it/first-time-contributor": "^11.1.6",
+		"@auto-it/npm": "^11.1.6",
+		"@types/node": "20.x",
+		"@types/vscode": "1.72.0",
+		"auto": "^11.1.6",
+		"eslint": "^8.51.0",
+		"jest": "^29.7.0",
+		"prettier": "^3.2.5",
+		"stylelint": "^16.5.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.5"
+	},
+	"prettier": "eslint-config-harmony/prettier",
+	"author": "Hayden Bleasel <hello@haydenbleasel.com>",
+	"contributors": [
+		"Anna Zhang <annazhang343@gmail.com>"
+	],
+	"__metadata": {
+		"id": "0eeefb69-7cbc-4159-b18a-1557d4772bcc",
+		"publisherId": "52201037-38ea-4af6-84e1-85cff73b9e26",
+		"publisherDisplayName": "Hayden Bleasel",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1726648481536,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
